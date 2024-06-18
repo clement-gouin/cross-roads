@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cross-Roads</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/lz-string@1.5/libs/lz-string.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <main id="app" style="display: none">
+      <template v-if="debug">
+        <h1>Cross Roads</h1>
+        <textarea v-model="debugData" rows="15"></textarea>
+        <br />
+        <br />
+        <a v-if="debugData.length" :href="debugUrl" target="_blank"
+          >Output link</a
+        >
+        <br />
+        <br />
+        <hr />
+      </template>
+      <h1 v-html="title + (debug ? ' (preview)' : '')"></h1>
+      <a
+        class="link"
+        v-for="link in links"
+        :href="link.href"
+        target="_blank"
+        v-html="link.label"
+      ></a>
+    </main>
+  </body>
+</html>
