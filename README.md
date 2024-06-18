@@ -1,5 +1,5 @@
 # Cross-Roads
-*When you need quizzes on the go !*
+*Where will you go next?*
 
 ### [Tool link](https://clement-gouin.github.io/cross-roads/)
 
@@ -23,10 +23,10 @@ After that each link is defined as follows:
 ```txt
 Where to find me
 https://www.youtube.com/watch?v=dQw4w9WgXcQ
-🎥 My Youtube Channel
+🎥 | My Youtube Channel
 https://www.instagram.com/officialrickastley
-📷 My Instagram Profile
+📷 | My Instagram Profile
 https://open.spotify.com/artist/0gxyHStUsqpMadRV0Di1Qt
-🎵 My Spotify
+🎵 | My Spotify
 ```
 
