@@ -11,6 +11,16 @@
   </head>
   <body>
     <main id="app" style="display: none">
+      <div v-if="debug">
+        <h1>Cross-Roads</h1>
+        <textarea v-model="debugData" rows="10"></textarea>
+        <a v-if="debugData.length" :href="debugUrl" target="_blank"
+          >Output link</a
+        >
+        <br />
+        <br />
+        <hr />
+      </div>
       <h1 v-html="title + (debug ? ' (preview)' : '')"></h1>
       <a
         class="link"
@@ -19,13 +29,6 @@
         target="_blank"
         v-html="link.label"
       ></a>
-      <div v-if="debug">
-        <br>
-        <hr />
-        <h1>Cross Roads</h1>
-        <textarea v-model="debugData" rows="12"></textarea>
-        <a v-if="debugData.length" :href="debugUrl" target="_blank">Output link</a>
-      </template>
     </main>
   </body>
 </html>
