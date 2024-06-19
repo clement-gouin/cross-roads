@@ -150,7 +150,8 @@ input[type="text"],
 select,
 .mono {
   font-family: "Roboto Mono", monospace;
-  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
 }
 
 a {
