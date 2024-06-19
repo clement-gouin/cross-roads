@@ -80,12 +80,15 @@ CUSTOM STYLE
 ================================================= 
 */
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 :root {
   /* https://materialui.co/colors/ */
-  --hue-primary: 92;
-  --sat-primary: 18.3%;
-  --background: hsl(var(--hue-primary), var(--sat-primary), 96.08%);
-  --background-primary: hsl(var(--hue-primary), var(--sat-primary), 93.33%);
+  --hue-primary: 120;
+  --sat-primary: 15%;
+  --background: hsl(var(--hue-primary), var(--sat-primary), 96%);
+  --background-primary: hsl(var(--hue-primary), var(--sat-primary), 93%);
   --background-secondary: hsl(var(--hue-primary), var(--sat-primary), 90%);
   --color-primary: hsl(var(--hue-primary), var(--sat-primary), 50%);
   --text-primary: hsl(var(--hue-primary), var(--sat-primary), 25%);
@@ -105,7 +108,7 @@ body {
   padding: 0;
   max-width: 100%;
   color: var(--text-primary);
-  font-family: Verdana, serif;
+  font-family: "Roboto", Verdana, serif;
 }
 
 body {
@@ -117,10 +120,6 @@ main {
   margin: auto;
   background-color: var(--background-primary);
   min-height: 100%;
-}
-
-h1 {
-  margin-bottom: 0.5em;
 }
 
 table {
@@ -135,7 +134,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 1.5em 0 0.5em;
+  margin: 1em 0 0.5em;
 }
 
 p,
@@ -144,6 +143,18 @@ ol {
   margin-bottom: 2em;
   color: var(--text-secondary);
   font-family: sans-serif;
+}
+
+textarea,
+input[type="text"],
+select,
+.mono {
+  font-family: "Roboto Mono", monospace;
+  width: 100%;
+}
+
+a {
+  color: inherit;
 }
 
 @media only screen and (min-width: 768px) {
@@ -155,16 +166,11 @@ ol {
   }
 }
 
-textarea,
-input[type="text"],
-select {
-  font-family: monospace;
-  width: 100%;
-}
-
-a {
-  color: inherit;
-}
+/* 
+=================================================
+APP STYLE
+================================================= 
+*/
 
 .link {
   display: block;
