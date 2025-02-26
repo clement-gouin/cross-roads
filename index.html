@@ -21,7 +21,8 @@
         <br />
         <hr />
       </div>
-      <h1 v-html="title + (debug ? ' (preview)' : '')"></h1>
+      <div v-html="header"></div>
+      <br />
       <a
         class="link"
         v-for="link in links"
