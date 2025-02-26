@@ -176,6 +176,10 @@ APP STYLE
 ================================================= 
 */
 
+.header {
+  margin: 2em 0 1rem;
+}
+
 .link {
   display: block;
   width: 100%;
