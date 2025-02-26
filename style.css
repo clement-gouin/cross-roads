@@ -178,6 +178,7 @@ APP STYLE
 
 .link {
   display: block;
+  width: 100%;
   text-decoration: none;
   padding: 1em;
   margin-bottom: 0.75em;
