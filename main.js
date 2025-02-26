@@ -6,7 +6,7 @@ let app = {
       debug: true,
       debugData:
         "Where to find me\nhttps://www.youtube.com/watch?v=dQw4w9WgXcQ\n🎥 | My Youtube Channel\nhttps://www.instagram.com/officialrickastley\n📷 | My Instagram Profile\nhttps://open.spotify.com/artist/0gxyHStUsqpMadRV0Di1Qt\n🎵 | My Spotify",
-      title: "",
+      header: "",
       links: [],
     };
   },
@@ -76,7 +76,10 @@ let app = {
       if (parts.length < 1) {
         return true;
       }
-      this.title = parts.shift();
+      this.header = parts.shift();
+      if (!/<[^>]*>/.test(this.header)) {
+        this.header = `<h1>${this.header}</h1>`;
+      }
       this.links = [];
       while (parts.length >= 2) {
         this.links.push({

@@ -7,9 +7,9 @@
 
 Format is made line by line
 
-Header (1 line):
+Header (1 line, `<h1>` is added by default if no HTML is provided):
 ```txt
-1   Title (html)
+1   Title and description (html)
 ```
 
 After that each link is defined as follows:
