@@ -31,11 +31,11 @@ https://open.spotify.com/artist/0gxyHStUsqpMadRV0Di1Qt
 ```
 
 ```txt
-<h1><i icon="hand"></i> Your choice <i icon="hand"></i></h1><img src="https://external-preview.redd.it/C84ufieQl-aIoR4PrmEGpAEoT81zMhTr7UqG6_66XVM.jpg?auto=webp&s=652ab6f0854cc2e7375fe34c9944a650a46b08a4" />
+<h1><i icon=hand></i> Your choice <i icon=hand></i></h1><img src="https://external-preview.redd.it/C84ufieQl-aIoR4PrmEGpAEoT81zMhTr7UqG6_66XVM.jpg?auto=webp&s=652ab6f0854cc2e7375fe34c9944a650a46b08a4" />
 https://www.nyan.cat/index.php?cat=tacnayn
-<span class="red"><b><i icon="pill"></i></b> Take the red pill</span>
+<span class="red"><b><i icon=pill></i></b> Take the red pill</span>
 https://www.nyan.cat/index.php?cat=original
-<span class="blue"><b><i icon="pill"></i></b> Take the blue pill</span>
+<span class="blue"><b><i icon=pill></i></b> Take the blue pill</span>
 ```
 
 ## Tips
