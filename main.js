@@ -49,9 +49,11 @@ let app = {
     },
     updateEditor(value) {
       const debugDataSplit = value.split("\n");
-      const lines = Array(
-        Math.max(debugDataSplit.length, HELP_HEADER.length + HELP_PART.length)
-      ).fill(0);
+      let size = HELP_HEADER.length + HELP_PART.length;
+      while (debugDataSplit.length > size) {
+        size += HELP_PART.length;
+      }
+      const lines = Array(size).fill(0);
       this.editor.numbersText = lines.map((v, i) => `${i + 1}.`).join("\n");
       this.editor.overlayText = lines
         .map((v, i) => {
