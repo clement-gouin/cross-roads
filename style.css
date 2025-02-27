@@ -193,6 +193,12 @@ svg.lucide {
   vertical-align: text-top;
 }
 
-b .lucide {
+b .lucide,
+h1 .lucide,
+h2 .lucide,
+h3 .lucide,
+h4 .lucide,
+h5 .lucide,
+h6 .lucide {
   stroke-width: 3;
 }
