@@ -41,4 +41,4 @@ https://www.nyan.cat/index.php?cat=original
 ## Tips
 
 * [Material design colors](https://materialui.co/colors/) are available, you can use `class="red-500"` on your HTML
-* [Lucide icons](https://lucide.dev/icons) are available, you can use `<i icon="house"></i>` on your HTML
+* [Lucide icons](https://lucide.dev/icons) are available, you can use `<i icon=house></i>` on your HTML
