@@ -98,6 +98,15 @@ let app = {
         this.readZData(this.debugData);
       }
     },
+    updateIcons() {
+      lucide.createIcons({
+        nameAttr: "icon",
+        attrs: {
+          width: "1.1em",
+          height: "1.1em",
+        },
+      });
+    },
   },
   beforeMount: function () {
     this.initApp();
@@ -105,6 +114,10 @@ let app = {
   mounted: function () {
     console.log("app mounted");
     setTimeout(this.showApp);
+    this.updateIcons();
+  },
+  updated: function () {
+    this.updateIcons();
   },
 };
 
