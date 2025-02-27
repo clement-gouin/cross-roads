@@ -14,7 +14,7 @@ Header (1 line):
 
 After that each link is defined as follows:
 ```txt
-1   link
+1   Link
 2   Label (html)
 ```
 

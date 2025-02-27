@@ -1,5 +1,8 @@
 /* exported app */
 
+const HELP_HEADER = ["Title and description (html, <h1> on plain text)"];
+const HELP_PART = ["Link", "Label (html)"];
+
 let app = {
   data() {
     return {
@@ -8,12 +11,15 @@ let app = {
         "Where to find me\nhttps://www.youtube.com/watch?v=dQw4w9WgXcQ\n🎥 | My Youtube Channel\nhttps://www.instagram.com/officialrickastley\n📷 | My Instagram Profile\nhttps://open.spotify.com/artist/0gxyHStUsqpMadRV0Di1Qt\n🎵 | My Spotify",
       header: "",
       links: [],
+      debugUrl: "",
+      editor: {
+        numbersCols: 0,
+        numbersText: "",
+        overlayText: "",
+      },
     };
   },
   computed: {
-    debugUrl() {
-      return window.location.pathname + "?z=" + this.encodeData(this.debugData);
-    },
     success() {
       const self = this;
       return this.questions.every(
@@ -28,11 +34,37 @@ let app = {
   watch: {
     debugData(value) {
       this.readZData(value);
+      this.updateEditor(value);
+      this.updateDebugUrl(value);
     },
   },
   methods: {
     showApp() {
       document.getElementById("app").setAttribute("style", "");
+    },
+    updateDebugUrl(value) {
+      this.debugUrl = value.trim().length
+        ? window.location.pathname + "?z=" + this.encodeData(value.trim())
+        : "";
+    },
+    updateEditor(value) {
+      const debugDataSplit = value.split("\n");
+      const lines = Array(
+        Math.max(debugDataSplit.length, HELP_HEADER.length + HELP_PART.length)
+      ).fill(0);
+      this.editor.numbersText = lines.map((v, i) => `${i + 1}.`).join("\n");
+      this.editor.overlayText = lines
+        .map((v, i) => {
+          if (debugDataSplit.length > i && debugDataSplit[i].trim().length) {
+            return " ".repeat(debugDataSplit[i].length);
+          }
+          if (HELP_HEADER.length > i) {
+            return HELP_HEADER[i];
+          }
+          return HELP_PART[(i - HELP_HEADER.length) % HELP_PART.length];
+        })
+        .join("\n");
+      this.editor.numbersCols = lines.length.toString().length + 1;
     },
     submit() {
       this.readonly = true;
@@ -96,6 +128,8 @@ let app = {
       }
       if (this.debug) {
         this.readZData(this.debugData);
+        this.updateEditor(this.debugData);
+        this.updateDebugUrl(this.debugData);
       }
     },
     updateIcons() {
@@ -115,6 +149,11 @@ let app = {
     console.log("app mounted");
     setTimeout(this.showApp);
     this.updateIcons();
+    this.$refs.code?.addEventListener("scroll", () => {
+      this.$refs.numbers.scrollTop = this.$refs.code.scrollTop;
+      this.$refs.overlay.scrollTop = this.$refs.code.scrollTop;
+      this.$refs.overlay.scrollLeft = this.$refs.code.scrollLeft;
+    });
   },
   updated: function () {
     this.updateIcons();
