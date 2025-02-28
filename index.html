@@ -48,10 +48,10 @@
         <br />
         <hr />
       </div>
-      <div class="header" v-html="header"></div>
+      <div class="header" v-html="parsed.header"></div>
       <a
         class="link"
-        v-for="link in links"
+        v-for="link in parsed.links"
         :href="link.href"
         target="_blank"
         v-html="link.label"
