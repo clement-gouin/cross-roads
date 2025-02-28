@@ -2,6 +2,10 @@ import { createApp } from "vue";
 
 const HELP_HEADER = ["Title and description (html, <h1> on plain text)"];
 const HELP_PART = ["Link", "Label (html)"];
+const DEFAULT_VALUES = {
+  header: "",
+  links: [],
+};
 
 const utils = {
   base64URLTobase64(str) {
@@ -39,10 +43,7 @@ const app = createApp({
         numbersText: "",
         overlayText: "",
       },
-      parsed: {
-        header: "",
-        links: [],
-      },
+      parsed: DEFAULT_VALUES,
     };
   },
   computed: {},
@@ -127,6 +128,7 @@ const app = createApp({
     },
     readZData(str) {
       this.debugData = str;
+      this.parsed = DEFAULT_VALUES;
       const parts = str.trim().split("\n");
       if (parts.length < 1) {
         return true;
@@ -135,7 +137,6 @@ const app = createApp({
       if (!/<[^>]*>/u.test(this.parsed.header)) {
         this.parsed.header = `<h1>${this.parsed.header}</h1>`;
       }
-      this.parsed.links = [];
       while (parts.length >= 2) {
         this.parsed.links.push({
           href: parts.shift(),
