@@ -165,7 +165,7 @@ APP STYLE
   margin: 2em 0 1rem;
 }
 
-.link {
+.button {
   display: block;
   width: 100%;
   text-decoration: none;
@@ -178,7 +178,7 @@ APP STYLE
   font-size: 1.333em;
 }
 
-.link:hover {
+.button:hover {
   background-color: var(--background-secondary);
 }
 
