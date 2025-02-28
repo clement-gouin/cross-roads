@@ -3,7 +3,7 @@
 
 > Part of the [Z-Apps](https://github.com/clement-gouin/z-app)
 
-### [Tool link](https://clement-gouin.github.io/cross-roads/)
+### [Tool link](https://clement-gouin.github.io/z-cross-roads/)
 
 ## Data format
 
